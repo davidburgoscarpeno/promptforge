@@ -5,6 +5,7 @@ import Faq from '../components/Faq.astro';
 import RelatedTools from '../components/RelatedTools.astro';
 import AdSlot from '../components/AdSlot.astro';
 import TitleGenTool from '../tools/TitleGenTool';
+import { PromptBuilderTool, LibraryTool, RoastTool, NameGenTool } from '../tools/PromptTools';
 import { implementedTools, type Tool } from '../data/tools';
 import { site } from '../config';
 import { t } from '../i18n/en';
@@ -29,7 +30,11 @@ const schema = [
   <Breadcrumbs crumbs={[{ name: 'Home', href: '/' }, { name: tool.category }, { name: tool.name }]} />
   <h1>{tool.name}</h1>
   <p class="lead">{tool.intro}</p>
-  <TitleGenTool client:load />
+  {tool.component === 'TitleGenTool' && <TitleGenTool client:load />}
+  {tool.component === 'PromptBuilderTool' && <PromptBuilderTool client:load />}
+  {tool.component === 'LibraryTool' && <LibraryTool client:load />}
+  {tool.component === 'RoastTool' && <RoastTool client:load />}
+  {tool.component === 'NameGenTool' && <NameGenTool client:load />}
   <AdSlot position="after-tool" />
   <h2>{t.tool.howTo}</h2>
   <ol>{tool.howTo.map((step) => <li>{step}</li>)}</ol>
