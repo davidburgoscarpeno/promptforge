@@ -23,6 +23,14 @@ export const PROMPT_LIBRARY: { category: string; title: string; prompt: string }
   { category: 'Learning', title: 'Feynman check', prompt: 'I will explain [CONCEPT] in my own words. Point out what I got wrong, what I missed, and one analogy that would make it click. My explanation: [TEXT]' },
   { category: 'Productivity', title: 'Meeting agenda', prompt: 'Create a 30-minute meeting agenda for [GOAL] with time boxes, one decision per item, and space for action items with owners.' },
   { category: 'Productivity', title: 'Email triage reply', prompt: 'Act as my assistant. Draft a polite reply to this email that [GOAL: declines / accepts / asks for more info]. Keep it under 6 sentences. Email: [TEXT]' },
+  { category: 'Writing', title: 'Newsletter intro', prompt: 'Act as a newsletter writer. Write a 3-sentence opening for this week newsletter about [TOPIC]. Hook with a surprising fact, keep it conversational, end with a reason to keep reading.' },
+  { category: 'Writing', title: 'Simplify jargon', prompt: 'Rewrite this text so a smart 15-year-old understands it. Replace jargon with plain words, keep all facts, keep the length similar. Text: [TEXT]' },
+  { category: 'Coding', title: 'Regex builder', prompt: 'Act as a regex expert. Write a regular expression that matches [DESCRIBE PATTERN] in [LANGUAGE]. Explain each part in one line, and give 3 example matches and 2 non-matches.' },
+  { category: 'Coding', title: 'SQL from plain English', prompt: 'Act as a data analyst. Write a SQL query (PostgreSQL) for this request: [REQUEST]. Tables: [SCHEMA]. Add comments explaining each join and filter.' },
+  { category: 'Marketing', title: 'Landing page hero', prompt: 'Act as a conversion copywriter. Write 3 hero sections (headline, subheadline, CTA button) for [PRODUCT] targeting [AUDIENCE]. Headlines under 8 words, benefit-driven, no hype words.' },
+  { category: 'Marketing', title: 'Objection handling', prompt: 'List the 5 strongest objections [AUDIENCE] has to buying [PRODUCT], then write a one-sentence honest answer to each. No dismissiveness.' },
+  { category: 'Learning', title: 'Quiz me', prompt: 'Act as a strict but kind examiner. Ask me 10 questions about [SUBJECT], one at a time, from easy to hard. After each answer, tell me what I missed and score me out of 10.' },
+  { category: 'Productivity', title: 'Weekly review', prompt: 'Act as a productivity coach. Here is what I did this week: [LIST]. Ask me 5 sharp questions to find what to stop, start and continue next week.' },
 ];
 export function libraryCategories(): string[] { return [...new Set(PROMPT_LIBRARY.map((p) => p.category))]; }
 export const ROAST_RULES: { test: RegExp; issue: string; fix: string }[] = [
